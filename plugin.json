@@ -1,0 +1,11 @@
+{ 
+  "name" : "tags_dip",
+  "display_name": "TagsDip",
+  "file": "tagsDip.php",
+  "author": "Saqib Razzaq",
+  "autor_website": "https://github.com/saqirzzq",
+  "date": "2019, 03, 03",
+  "description": "Add custom tags, CSS or Javascript",
+  "version": "0.1",
+  "state": "Beta"
+}

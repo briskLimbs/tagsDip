@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="content-wrapper bg-light">
+  <div class="col-12 grid-margin">
+    {% if message %}
+      <div class="alert alert-success">{{message}}</div>
+    {% endif %}
+
+    {% for error in _errors %}
+      <div class="alert alert-danger">{{error}}</div>
+    {% endfor %}
+    <!-- content here -->
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Custom {{action|upper}}</h4>
+        <form method="post" name="dip">
+          {% if action == 'css' %}
+            <p class="card-description">
+              Any CSS you write here will be loaded into < header >< / header > as <strong>dip.css</strong>
+            </p>
+
+            <textarea name="data" rows="20" class="form-control" placeholder="#my-section { background-color: black; }">{% if response %}{{response}}{% endif %}</textarea>
+          {% elseif action == 'js' %}
+            <p class="card-description">
+              Any JavaScript you write here will be loaded into < footer >< / footer > as <strong>dip.js</strong>
+            </p>
+
+            <textarea name="data" rows="20" class="form-control" placeholder="$(#my-section).text('Hello World');">{% if response %}{{response}}{% endif %}</textarea>
+          {% elseif action == 'header' %}
+            <p class="card-description">
+              Any tag, CSS or JavaScript added here will be loaded into < header >< / header > in raw form
+            </p>
+
+            <textarea name="data" rows="20" class="form-control" placeholder="<googleverification></googleverification>">{% if response %}{{response}}{% endif %}</textarea>
+
+          {% elseif action == 'footer' %}
+            <p class="card-description">
+              Any tag, CSS or JavaScript added here will be loaded into < footer >< / footer > in raw form
+            </p>
+
+            <textarea name="data" rows="20" class="form-control" placeholder="$(#my-section).text('Hello World');">{% if response %}{{response}}{% endif %}</textarea>
+          {% endif %}
+
+          <div class="float-right mt-2">
+            <button type="submit" name="dip" value="{{action}}" class="btn btn-gradient-primary btn-icon-text">
+            <i class="mdi mdi-file-check btn-icon-prepend"></i>
+            Save
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+        
+        
+{% endblock %}
