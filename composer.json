@@ -3,7 +3,6 @@
     "description": "A BriskLimbs addon to add custom tags, CSS or Javascript",
     "keywords": ["custom","css","header","footer"],
     "homepage": "https://github.com/briskLimbs/tagsDip",
-    "license": "GNU",
     "authors": [
         {
             "name": "BriskLimbs",
@@ -12,12 +11,5 @@
     ],
     "require": {
         "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-0": {
-            "autoload": {
-              "files": ["tagsDip"]
-          }
-        }
     }
 }
