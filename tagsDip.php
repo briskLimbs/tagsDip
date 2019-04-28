@@ -21,7 +21,8 @@ $menu = array(
 );
 
 $addons->addMenu($menu);
-$addons->addHook('customCss', 'customCss');
-$addons->addHook('customJs', 'customJs');
-$addons->addHook('customHeader', 'customHeader');
-$addons->addHook('customFooter', 'customFooter');
+
+$addons->addTrigger('customCss', 'head_end');
+$addons->addTrigger('customHeader', 'head_end');
+$addons->addTrigger('customJs', 'footer_end');
+$addons->addTrigger('customFooter', 'footer_end');
